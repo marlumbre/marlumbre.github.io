@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>marlumbre</title>
-		<link href="styles.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="mediaqueries.css">
 	</head>
 	<body>
-		<h1>marlumbre</h1>
-		<p>i'm trying to work on something, i promise</p>
+		<p>It begins.</p>
+		<nav id="desktop-nav">
+			<div class="logo">Marlon Lumbre</div>
+			<div>
+				<ul class="nav-links">
+					<li><a href="#about">About</a></li>
+					<li><a href="#education">Education</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="https://github.com/marlumbre">GitHub</a></li>
+				</ul>
+			</div>
+		</nav>
+		<nav id="hamburger-nav">
+			<div class="logo">Marlon Lumbre</div>
+			<div class="hamburger-menu">
+				<div class="hamburger-icon" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="menu-links">
+					<li><a href="#about" onclick="toggleMenu()">About</a></li>
+					<li><a href="#education" onclick="toggleMenu()">Education</a></li>
+					<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+					<li><a href="https://github.com/marlumbre" onclick="toggleMenu()">GitHub</a></li>
+				</div>
+			</div>
+		</nav>
+		<script src="script.js"></script>
 	</body>
 </html>
