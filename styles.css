@@ -189,6 +189,11 @@ section {
   font-size: 1.75rem;
 }
 
+.section__text__p3 {
+  text-align: center;
+  margin: auto 0 auto;
+}
+
 .title {
   font-size: 3rem;
   text-align: center;
