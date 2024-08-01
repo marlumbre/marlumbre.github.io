@@ -8,15 +8,13 @@
 		<link rel="stylesheet" href="mediaqueries.css">
 	</head>
 	<body>
-		<p>It begins.</p>
 		<nav id="desktop-nav">
 			<div class="logo">Marlon Lumbre</div>
 			<div>
 				<ul class="nav-links">
-					<li><a href="#about">About</a></li>
-					<li><a href="#education">Education</a></li>
 					<li><a href="#contact">Contact</a></li>
-					<li><a href="https://github.com/marlumbre">GitHub</a></li>
+					<li><a href="./assets/resume.pdf" target="_blank">My CV</a></li>
+					<li><a href="https://github.com/marlumbre" class="github-link" target="_blank"><img src="./assets/github.png" alt="GitHub logo" width="30" height="30"></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -29,13 +27,23 @@
 					<span></span>
 				</div>
 				<div class="menu-links">
-					<li><a href="#about" onclick="toggleMenu()">About</a></li>
-					<li><a href="#education" onclick="toggleMenu()">Education</a></li>
 					<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-					<li><a href="https://github.com/marlumbre" onclick="toggleMenu()">GitHub</a></li>
+					<li><a href="./assets/resume.pdf" target="_blank" onclick="toggleMenu()">My CV</a></li>
+					<li><a href="https://github.com/marlumbre" target="_blank" onclick="toggleMenu()">GitHub</a></li>
 				</div>
 			</div>
 		</nav>
+		<section id="profile">
+			<div class="section__pic-container">
+				<img src="./assets/profile-pic.png" alt="Marlon Lumbre profile picture" />
+			</div>
+			<div class="section__text">
+				<p class="section__text__p1">My name is</p>
+				<h1 class="title">Marlon Lumbre</h1>
+				<p class="section__text__p2">Aspiring Frontend Developer</p>
+				<p class="section__text__p3"><br/>An eager computer science student learning about Frontend development as well as UI/UX design.</p>
+			</div>
+		</section>
 		<script src="script.js"></script>
 	</body>
 </html>
