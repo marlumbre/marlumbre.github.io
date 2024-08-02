@@ -202,3 +202,7 @@ section {
 .recent-project-text, .embed-container {
   text-align: center;
 }
+
+.prototype-link {
+  padding-bottom: 20%;
+}
