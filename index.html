@@ -12,10 +12,10 @@
 			<div class="logo">Marlon Lumbre</div>
 			<div>
 				<ul class="nav-links">
-					<li><a href="#recent-project">Recent Project</a></li>
-					<li><a href="mailto:marlonki8l@gmail.com">Email Me</a></li>
-					<li><a href="./assets/resume.pdf" target="_blank">My CV</a></li>
-					<li><a href="https://github.com/marlumbre" class="github-link" target="_blank"><img src="./assets/github.png" alt="GitHub logo" width="30" height="30"></a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="mailto:marlonki8l@gmail.com">Email</a></li>
+					<li><a href="./assets/resume.pdf" target="_blank">Resume</a></li>
+					<li><a href="https://github.com/marlumbre" class="github-link" target="_blank">GitHub</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -28,7 +28,7 @@
 					<span></span>
 				</div>
 				<div class="menu-links">
-					<li><a href="#recent-project">Recent Project</a></li>
+					<li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
 					<li><a href="mailto:marlonki8l@gmail.com" onclick="toggleMenu()">Email Me</a></li>
 					<li><a href="./assets/resume.pdf" target="_blank" onclick="toggleMenu()">My CV</a></li>
 					<li><a href="https://github.com/marlumbre" target="_blank" onclick="toggleMenu()">GitHub</a></li>
@@ -45,14 +45,68 @@
 				<p class="section__text__p2">An eager computer science student learning about front-end and UI/UX design.</p>
 			</div>
 		</section>
-		<section id="recent-project">
-			<div class="recent-project-text">
-				<h1 class="recent-project-text-title">My Recent Project</h1>
+		<section id="projects">
+			<div class="projects-text">
+				<h1 class="projects-text-title">My Projects</h1>
 			</div>
-			<div class="embed-container">
-				<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FD8TO76Cdc8LlSFJm9fxp6d%2FMental-Health-Concept-App%3Fnode-id%3D0-1%26t%3DeF2nNVm9OMjHmZCB-1" allowfullscreen></iframe>
-				<br/>
-				<a class="protoype-link" href="https://www.figma.com/proto/D8TO76Cdc8LlSFJm9fxp6d/Mental-Health-Concept-App?node-id=0-1&t=eF2nNVm9OMjHmZCB-1" target="_blank">Check the prototype here</a>
+			<div class="accordion">
+				<div class="accordion-item">
+					<button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+						<span class="accordion-title">Mental Health Concept App</span>
+						<span class="accordion-icon">+</span>
+					</button>
+					<div class="accordion-content">
+						<div class="accordion-inner">
+							<div class="accordion-body">
+								<div class="accordion-photo">
+									<img src="" alt="Mental Health Concept App preview" />
+								</div>
+								<div class="accordion-details">
+									<p>A UI/UX design concept for a mental health companion app created in Figma, focused on clean navigation and accessible daily check-ins.</p>
+									<a class="project-link" href="https://www.figma.com/proto/D8TO76Cdc8LlSFJm9fxp6d/Mental-Health-Concept-App?node-id=0-1&t=eF2nNVm9OMjHmZCB-1" target="_blank">Check the prototype here</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+						<span class="accordion-title">Project Two</span>
+						<span class="accordion-icon">+</span>
+					</button>
+					<div class="accordion-content">
+						<div class="accordion-inner">
+							<div class="accordion-body">
+								<div class="accordion-photo">
+									<img src="" alt="Project Two preview" />
+								</div>
+								<div class="accordion-details">
+									<p>Add a short description of your second project here, highlighting the tools used and the problem it solves.</p>
+									<a class="project-link" href="#" target="_blank">View Project</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+						<span class="accordion-title">Project Three</span>
+						<span class="accordion-icon">+</span>
+					</button>
+					<div class="accordion-content">
+						<div class="accordion-inner">
+							<div class="accordion-body">
+								<div class="accordion-photo">
+									<img src="" alt="Project Three preview" />
+								</div>
+								<div class="accordion-details">
+									<p>Add a short description of your third project here, highlighting the tools used and the problem it solves.</p>
+									<a class="project-link" href="#" target="_blank">View Project</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<script src="script.js"></script>
