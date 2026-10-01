@@ -2,7 +2,13 @@
   #profile {
     height: 83vh;
     margin-bottom: 6rem;
+    gap: 3rem;
   }
+
+  section {
+    margin: 0 5rem;
+  }
+}
 
 @media screen and (max-width: 1200px) {
   #desktop-nav {
@@ -11,6 +17,12 @@
 
   #hamburger-nav {
     display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  .logo {
+    font-size: 1.6rem;
   }
 
   #profile,
@@ -29,6 +41,7 @@
   .section__pic-container {
     width: 275px;
     height: 275px;
+    aspect-ratio: 1 / 1;
     margin: 0 auto 2rem;
   }
 
@@ -41,5 +54,4 @@
     flex: none;
     width: 100%;
   }
-}
 }
