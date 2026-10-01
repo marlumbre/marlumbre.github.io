@@ -12,8 +12,57 @@ img {
   max-width: 100%;
 }
 
+/* theme variables */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --text-secondary: rgb(85, 85, 85);
+  --border-color: #000000;
+  --card-bg: #ffffff;
+  --photo-bg: #fcfcfc;
+  --hover-color: #777777;
+  --btn-hover-bg: #000000;
+  --btn-hover-text: #ffffff;
+  --icon-filter: none;
+  --shadow-color: rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --text-secondary: #a3a3a3;
+    --border-color: rgba(255, 255, 255, 0.25);
+    --card-bg: #1c1c1c;
+    --photo-bg: #242424;
+    --hover-color: #cccccc;
+    --btn-hover-bg: #f5f5f5;
+    --btn-hover-text: #121212;
+    --icon-filter: invert(1);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --border-color: rgba(255, 255, 255, 0.25);
+  --card-bg: #1c1c1c;
+  --photo-bg: #242424;
+  --hover-color: #cccccc;
+  --btn-hover-bg: #f5f5f5;
+  --btn-hover-text: #121212;
+  --icon-filter: invert(1);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 300ms ease, color 300ms ease;
 }
 
 html {
@@ -21,7 +70,7 @@ html {
 }
 
 p {
-  color: rgb(85,85,85);
+  color: var(--text-secondary);
 }
 
 /* transition styling */
@@ -47,33 +96,104 @@ nav {
   gap: 2rem;
   list-style: none;
   font-size: 1.5rem;
+  align-items: center;
 }
 
 a {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
-  text-decoration-color: white;
+  text-decoration-color: transparent;
 }
 
 a:hover {
-  color: grey;
+  color: var(--hover-color);
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181,181,181);
+  text-decoration-color: var(--hover-color);
 }
 
 .logo {
   font-size: 2rem;
+  color: var(--text-color);
 }
 
 .logo:hover {
   cursor: default;
 }
 
+.github-link {
+  display: flex;
+  align-items: center;
+}
+
+.github-link img {
+  filter: var(--icon-filter);
+  transition: filter 300ms ease;
+}
+
+/* theme toggle button */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 0;
+  transition: all 300ms ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--card-bg);
+  transform: scale(1.08);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-color);
+}
+
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .sun-icon {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .theme-toggle .moon-icon {
+    display: none;
+  }
+}
+
 /* hamburger menu styling (for mobile) */
 
 #hamburger-nav {
   display: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 }
 
 .hamburger-menu {
@@ -93,7 +213,7 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: var(--text-color);
   transition: all 300ms ease-in-out;
 }
 
@@ -101,7 +221,10 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-color);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -110,10 +233,10 @@ a:hover {
 
 .menu-links a {
   display: block;
-  padding: 10px;
+  padding: 10px 20px;
   text-align: center;
   font-size: 1.5rem;
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
   transform: all 300ms ease-in-out;
 }
@@ -213,7 +336,7 @@ section {
 
 .projects-text-title {
   font-size: 3rem;
-  color: black;
+  color: var(--text-color);
 }
 
 .accordion {
@@ -225,21 +348,21 @@ section {
 }
 
 .accordion-item {
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
-  background-color: white;
+  background-color: var(--card-bg);
   overflow: hidden;
-  transition: box-shadow 300ms ease;
+  transition: box-shadow 300ms ease, border-color 300ms ease, background-color 300ms ease;
 }
 
 .accordion-item:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px var(--shadow-color);
 }
 
 .accordion-header {
   width: 100%;
   padding: 1.25rem 1.75rem;
-  background-color: white;
+  background-color: var(--card-bg);
   border: none;
   display: flex;
   justify-content: space-between;
@@ -248,18 +371,19 @@ section {
   font-family: inherit;
   font-size: 1.25rem;
   font-weight: 500;
-  color: black;
+  color: var(--text-color);
   text-align: left;
+  transition: background-color 300ms ease, color 300ms ease;
 }
 
 .accordion-item.open .accordion-header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .accordion-icon {
   font-size: 1.5rem;
   line-height: 1;
-  color: black;
+  color: var(--text-color);
   transition: transform 300ms ease;
 }
 
@@ -286,7 +410,7 @@ section {
   gap: 2rem;
   padding: 1.75rem;
   align-items: center;
-  color: black;
+  color: var(--text-color);
 }
 
 .accordion-photo {
@@ -294,13 +418,14 @@ section {
   width: 320px;
   max-width: 100%;
   aspect-ratio: 16 / 10;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #fcfcfc;
+  background-color: var(--photo-bg);
+  transition: background-color 300ms ease, border-color 300ms ease;
 }
 
 .accordion-photo img {
@@ -317,18 +442,18 @@ section {
 
 .accordion-photo:has(img[src=""])::after {
   content: "Photo";
-  color: black;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
 .accordion-details {
   flex: 1;
   text-align: left;
-  color: black;
+  color: var(--text-color);
 }
 
 .accordion-details p {
-  color: black;
+  color: var(--text-secondary);
   margin-bottom: 1.25rem;
   line-height: 1.6;
 }
@@ -336,16 +461,17 @@ section {
 .project-link {
   display: inline-block;
   padding: 0.65rem 1.4rem;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 2rem;
-  color: black;
+  color: var(--text-color);
+  background-color: transparent;
   font-size: 0.95rem;
   text-decoration: none;
-  transition: background-color 200ms ease, color 200ms ease, transform 200ms ease;
+  transition: background-color 200ms ease, color 200ms ease, transform 200ms ease, border-color 300ms ease;
 }
 
 .project-link:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--btn-hover-bg);
+  color: var(--btn-hover-text);
   text-decoration: none;
 }
